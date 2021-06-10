@@ -16,6 +16,8 @@ exports.process = (event, context) => {
 async function main() {
 
     console.log('running main');
+    var s = process.env.storage;
+    console.log(s);
 
     const containerClient = new ContainerClient(storageConnectionString, containerName);
 
