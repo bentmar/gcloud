@@ -9,6 +9,8 @@ const storageConnectionString = process.env.storageConnectionString
 const containerName = process.env.containerName;
 const consumerGroup = process.env.consumerGroup;
 
+process.setMaxListeners(0);
+
 exports.process = async(event, context) => {
     await main();
 };
