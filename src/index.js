@@ -71,7 +71,7 @@ async function main() {
             await subscription.close();
             await consumerClient.close();
             resolve();
-        }, 120000);
+        }, 110000);
     });
 }
 
