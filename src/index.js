@@ -39,6 +39,7 @@ async function main() {
             }
 
             for (const event of events) {
+                console.log('received events');
                 console.log(
                     `Received event: '${event.body}' from partition: '${context.partitionId}' and consumer group: '${context.consumerGroup}'`
                 );
@@ -70,7 +71,7 @@ async function main() {
             await subscription.close();
             await consumerClient.close();
             resolve();
-        }, 30000);
+        }, 120000);
     });
 }
 
