@@ -7,6 +7,6 @@ steps:
       - '-c'
       - |
         gcloud functions deploy function-1 \
-          --source=./src/
+          --source=../src/
 
 
