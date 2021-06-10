@@ -1,0 +1,12 @@
+steps:
+  - id: buildAndDeploy
+    waitFor: ['-']
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: bash
+    args:
+      - '-c'
+      - |
+        gcloud functions deploy function-1 \
+          --source=./src/
+
+
