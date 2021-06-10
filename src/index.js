@@ -3,23 +3,17 @@ const { EventHubConsumerClient } = require("@azure/event-hubs");
 const { ContainerClient } = require("@azure/storage-blob");
 const { BlobCheckpointStore } = require("@azure/eventhubs-checkpointstore-blob");
 
-const connectionString = process.env.storage;
-const eventHubName = "";
-const storageConnectionString = "";
-const containerName = "";
-const consumerGroup = "";
+const connectionString = process.env.ehConnectionString;
+const eventHubName = process.env.ehName;
+const storageConnectionString = process.env.storageConnectionString
+const containerName = process.env.containerName;
+const consumerGroup = process.env.consumerGroup;
 
 exports.process = (event, context) => {
     main();
 };
 
 async function main() {
-
-    console.log('running main');
-    console.log(connectionString);
-    console.log('printed conn string');
-    var s = process.env.storage;
-    console.log(s);
 
     const containerClient = new ContainerClient(storageConnectionString, containerName);
 
